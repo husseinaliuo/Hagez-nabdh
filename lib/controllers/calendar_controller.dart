@@ -2,7 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/data/model/appointment_model.dart';
+import 'package:nabth/data/model/appointment_model.dart';
 
 import '../main.dart';
 

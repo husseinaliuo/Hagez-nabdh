@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_route.dart';
+import 'package:nabth/core/constant/app_route.dart';
 
 class SplashController extends GetxController {
   @override

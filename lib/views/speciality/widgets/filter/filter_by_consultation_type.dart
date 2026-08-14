@@ -12,7 +12,7 @@ class FilterByConsultationType extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SpecialityController>(
       builder: (controller) => CustomExpansionTile(
-        title: "Consultation Type",
+        title: "نوع الاستشارة",
         initiallyExpanded: false,
         children: [
           Wrap(

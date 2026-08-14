@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_image.dart';
+import 'package:nabth/core/constant/app_image.dart';
 import '../../controllers/doctor_detail_controller.dart';
 import '../../core/constant/app_color.dart';
 import '../../shared/buttons/custom_back_button.dart';
@@ -58,7 +58,7 @@ class DoctorDetailScreen extends StatelessWidget {
         padding: EdgeInsets.all(24),
         child: ElevatedButton(
           onPressed: () => controller.onAppointNow(),
-          child: Text("Book Appointment"),
+          child: Text("احجز موعداً"),
         ),
       ),
     );

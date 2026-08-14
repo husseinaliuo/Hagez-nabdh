@@ -87,7 +87,7 @@ class PopularDoctorCard extends StatelessWidget {
                           ),
                           children: [
                             TextSpan(
-                              text: "(200 Reviews)",
+                              text: "(200 تقييم)",
                               style: TextStyle(
                                 fontSize: 11,
                                 color: AppColor.grey1,
@@ -122,7 +122,7 @@ class PopularDoctorCard extends StatelessWidget {
                     ),
                     children: [
                       TextSpan(
-                        text: "/hr",
+                        text: "/ساعة",
                         style: TextStyle(fontSize: 10, color: AppColor.primary),
                       ),
                     ],

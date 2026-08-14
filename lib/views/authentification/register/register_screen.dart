@@ -24,10 +24,10 @@ class RegisterScreen extends StatelessWidget {
               child: Column(
                 children: [
                   VerticalSpacer(41),
-                  AuthTitle(text: "Create your account"),
+                  AuthTitle(text: "أنشئ حسابك"),
                   VerticalSpacer(15),
                   AuthDescription(
-                    text: "Sign up to manage your account effortlessly.",
+                    text: "سجّل الآن لإدارة حسابك بسهولة.",
                   ),
                   VerticalSpacer(25),
                   RegisterToggleButton(),
@@ -43,8 +43,8 @@ class RegisterScreen extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               padding: EdgeInsets.only(bottom: 35),
               child: AuthBottomTextButton(
-                label: "Already have an account? ",
-                subLabel: "Log In",
+                label: "لديك حساب بالفعل؟ ",
+                subLabel: "تسجيل الدخول",
                 onTap: () => controller.navigateToLogin(),
               ),
             ),

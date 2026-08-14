@@ -55,7 +55,7 @@ class DoctorDetailInfo extends GetView<DoctorDetailController> {
               ),
               children: [
                 TextSpan(
-                  text: "/hr",
+                  text: "/ساعة",
                   style: TextStyle(fontSize: 14, color: AppColor.primary),
                 ),
               ],

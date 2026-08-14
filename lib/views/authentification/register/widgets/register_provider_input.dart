@@ -16,7 +16,7 @@ class RegisterProviderInput extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AuthLabel(
-            label: controller.isRegisterByPhone ? "Phone Number" : "Email",
+            label: controller.isRegisterByPhone ? "رقم الهاتف" : "البريد الإلكتروني",
           ),
           VerticalSpacer(15),
           controller.isRegisterByPhone

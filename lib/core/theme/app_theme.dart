@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medigo/core/constant/app_color.dart';
-import 'package:medigo/core/constant/app_font_family.dart';
+import 'package:nabth/core/constant/app_color.dart';
+import 'package:nabth/core/constant/app_font_family.dart';
 
 /// App theme configuration
 /// Centralizes all theme-related configurations for better maintainability
@@ -10,7 +10,7 @@ class AppTheme {
   /// Light theme configuration
   static ThemeData get lightTheme => ThemeData(
     scaffoldBackgroundColor: AppColor.white,
-    fontFamily: AppFontFamily.inter,
+    fontFamily: AppFontFamily.tajawal,
     colorScheme: ColorScheme.fromSeed(seedColor: AppColor.primary),
     elevatedButtonTheme: _elevatedButtonTheme,
     appBarTheme: _appBarTheme,

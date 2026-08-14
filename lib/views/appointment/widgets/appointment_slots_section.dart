@@ -18,7 +18,7 @@ class AppointmentSlotsSection extends StatelessWidget {
 
         spacing: 20,
         children: [
-          DoctorDetailTitle("Available Slots"),
+          DoctorDetailTitle("المواعيد المتاحة"),
           GetBuilder<AppointmentController>(
             builder: (controller) => Wrap(
               clipBehavior: Clip.none,

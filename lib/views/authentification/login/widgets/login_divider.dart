@@ -12,7 +12,7 @@ class LoginDivider extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Text(
-            "Or continue with",
+            "أو تابع من خلال",
             style: TextStyle(fontSize: 14, color: AppColor.grey2),
           ),
         ),

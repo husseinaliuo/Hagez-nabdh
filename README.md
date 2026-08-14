@@ -1,14 +1,14 @@
 <div align="center">
 
-# 🏥 Medigo
+# 🏥 نبض
 
-### _Your Healthcare Companion_
+### _رفيقك الصحي_
 
 [![Flutter](https://img.shields.io/badge/Flutter-3.9.2+-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
 [![Dart](https://img.shields.io/badge/Dart-3.9.2+-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
 [![License](https://img.shields.io/badge/License-Private-red?style=for-the-badge)](LICENSE)
 
-**A modern, feature-rich medical appointment application that connects patients with healthcare providers seamlessly.**
+**تطبيق حديث ومتكامل لحجز المواعيد الطبية، يربط المرضى بمقدمي الرعاية الصحية بسلاسة وسهولة.**
 
 [Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [Architecture](#-architecture) • [Contributing](#-contributing)
 
@@ -30,7 +30,7 @@
 
 <div align="center">
 
-### 🎬 Learn to Build Medigo from Scratch!
+### 🎬 Learn to Build نبض from Scratch!
 
 [![Watch on YouTube](https://img.shields.io/badge/▶_WATCH_FULL_PLAYLIST-FF0000?style=for-the-badge&logo=youtube&logoColor=white&labelColor=282828)](https://www.youtube.com/playlist?list=PLGwhLIITEIB_u-pBiiUxAf3Kz3Nu9VAY8)
 
@@ -54,16 +54,16 @@
 
 ## 📱 About
 
-**Medigo** is a comprehensive healthcare mobile application built with Flutter and Supabase, designed to revolutionize how patients connect with medical professionals. With an intuitive interface and powerful features, Medigo makes healthcare accessible at your fingertips.
+**نبض** هو تطبيق صحي متكامل مبني بتقنية Flutter وSupabase، صُمم ليحدث نقلة في طريقة تواصل المرضى مع الأطباء. بواجهة سهلة الاستخدام وميزات قوية، يضع نبض الرعاية الصحية في متناول يدك.
 
-### 🎯 Key Highlights
+### 🎯 أبرز المميزات
 
-- 🔐 **Secure Authentication** with Supabase
-- 📅 **Real-time Appointment Management**
-- 👨‍⚕️ **Comprehensive Doctor Profiles**
-- 🔍 **Advanced Search & Filtering**
-- 📊 **Patient Dashboard**
-- 🌍 **Cross-Platform Support**
+- 🔐 **تسجيل دخول آمن** عبر Supabase
+- 📅 **إدارة المواعيد في الوقت الفعلي**
+- 👨‍⚕️ **ملفات أطباء شاملة**
+- 🔍 **بحث وتصفية متقدم**
+- 📊 **لوحة تحكم للمريض**
+- 🌍 **دعم كامل للغة العربية (RTL)**
 
 ---
 
@@ -178,13 +178,14 @@ dart: ^3.9.2 # Programming language
 
 ### Typography
 
-- **Font Family**: Inter (Regular, Medium, SemiBold, Bold)
-- Weights: 400, 500, 600, 700
+- **Arabic Font Family**: Tajawal (Regular, Medium, Bold, ExtraBold)
+- **Latin Font Family**: Inter (Regular, Medium, SemiBold, Bold)
+- Weights: 400, 500, 700, 800
 
 ### Assets
 
 - **Images**: Categorized by type (doctors, icons, logos, specialties)
-- **Fonts**: Custom Inter font family
+- **Fonts**: Custom Tajawal (Arabic) and Inter (Latin) font families
 - **Icons**: SVG icons for scalability
 
 ---
@@ -192,7 +193,7 @@ dart: ^3.9.2 # Programming language
 ## 📂 Project Structure
 
 ```
-medigo/
+nabth/
 ├── android/                     # Android native configuration
 ├── ios/                         # iOS native configuration
 ├── web/                         # Web platform files
@@ -325,7 +326,7 @@ All UI screens organized by feature, each containing the presentation layer code
 
 ## 🏗️ Architecture & Design Patterns
 
-Medigo follows **Clean Architecture** principles with clear separation of concerns for maintainability and scalability.
+نبض follows **Clean Architecture** principles with clear separation of concerns for maintainability and scalability.
 
 ### Architecture Layers
 
@@ -438,8 +439,8 @@ Before you begin, ensure you have the following installed:
 #### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/LaithMahdi/medigo.git
-cd medigo
+git clone https://github.com/LaithMahdi/nabth.git
+cd nabth
 ```
 
 #### 2️⃣ Install Dependencies
@@ -492,6 +493,8 @@ While the app is running:
 
 ### 🗄️ Database Setup (Supabase)
 
+> **ملاحظة:** يتضمّن المشروع ملف `supabase/schema.sql` جاهزاً يحتوي على جميع الجداول، سياسات الأمان (RLS) وبيانات تجريبية. افتح محرر SQL في لوحة Supabase الخاصة بمشروعك والصق محتوى الملف ثم نفّذه مباشرة.
+
 #### Create Tables in Supabase
 
 ##### 1. **Speciality Table**
@@ -519,21 +522,40 @@ CREATE TABLE doctor (
   rating_number INTEGER,
   patient_number INTEGER,
   speciality INTEGER REFERENCES speciality(id),
+  availability TEXT,
+  status TEXT DEFAULT 'offline',
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 ```
 
-##### 3. **Appointment Table**
+##### 3. **Patient Table**
+
+```sql
+CREATE TABLE patient (
+  id BIGSERIAL PRIMARY KEY,
+  full_name TEXT NOT NULL,
+  email TEXT,
+  phone_number BIGINT,
+  gender TEXT,
+  age INTEGER,
+  detail TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+##### 4. **Appointment Table**
 
 ```sql
 CREATE TABLE appointment (
   id BIGSERIAL PRIMARY KEY,
   user_id UUID REFERENCES auth.users(id),
   doctor_id BIGINT REFERENCES doctor(id),
-  appointment_date DATE,
-  appointment_time TIME,
+  patient_id BIGINT REFERENCES patient(id),
+  consultation_type TEXT,
+  consultation_fee TEXT,
+  date TEXT,
+  time TEXT,
   status TEXT DEFAULT 'pending',
-  notes TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 ```
@@ -678,8 +700,8 @@ We welcome contributions! Here's how you can help:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/LaithMahdi/medigo.git
-   cd medigo
+   git clone https://github.com/LaithMahdi/nabth.git
+   cd nabth
    ```
 
 2. **Create a Feature Branch**
@@ -739,7 +761,7 @@ We welcome contributions! Here's how you can help:
 ## 📄 License
 
 This project is private and not published to any package repository.  
-© 2025 Medigo. All rights reserved.
+© 2025 نبض. All rights reserved.
 
 ---
 
@@ -791,8 +813,8 @@ This project is private and not published to any package repository.
 
 ### Made with ❤️ using Flutter
 
-**Medigo** - _Connecting Patients with Healthcare Professionals_
+**نبض** - _Connecting Patients with Healthcare Professionals_
 
-[⬆ Back to Top](#-medigo)
+[⬆ Back to Top](#-nabth)
 
 </div>

@@ -30,7 +30,7 @@ class HomeSeeMoreButton extends StatelessWidget {
           InkWell(
             onTap: onTap,
             child: Text(
-              "See all",
+              "عرض الكل",
               style: TextStyle(fontSize: 13, color: AppColor.primary),
             ),
           ),

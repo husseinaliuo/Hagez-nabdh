@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_route.dart';
+import 'package:nabth/core/constant/app_route.dart';
 import '../data/model/doctor_model.dart';
 import '../data/model/patient_model.dart';
 

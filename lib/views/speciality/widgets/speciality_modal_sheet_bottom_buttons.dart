@@ -4,8 +4,8 @@ import '../../../shared/buttons/custom_outline_button.dart';
 class SpecialityModalSheetBottomButtons extends StatelessWidget {
   const SpecialityModalSheetBottomButtons({
     super.key,
-    this.titleFilter = "Apply",
-    this.titleClear = "Clear",
+    this.titleFilter = "تطبيق",
+    this.titleClear = "مسح",
     required this.onPressedFilter,
     required this.onPressedClear,
   });

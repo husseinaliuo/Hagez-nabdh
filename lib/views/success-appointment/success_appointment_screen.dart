@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:medigo/core/config.dart';
-import 'package:medigo/core/constant/app_color.dart';
-import 'package:medigo/core/constant/app_image.dart';
-import 'package:medigo/shared/spacer.dart';
+import 'package:nabth/core/config.dart';
+import 'package:nabth/core/constant/app_color.dart';
+import 'package:nabth/core/constant/app_image.dart';
+import 'package:nabth/shared/spacer.dart';
 import '../../controllers/success_appointment_controller.dart';
 import 'widgets/success_appointment_row_icon.dart';
 import 'widgets/success_appointment_text_rich.dart';
@@ -24,7 +24,7 @@ class SuccessAppointmentScreen extends StatelessWidget {
             Image.asset(AppImage.imagesIconesChecked, width: 140, height: 140),
             VerticalSpacer(25),
             Text(
-              "Congratulations !",
+              "مبروك!",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
@@ -33,13 +33,13 @@ class SuccessAppointmentScreen extends StatelessWidget {
             ),
             VerticalSpacer(15),
             SuccessAppointmentTextRich(
-              label: "${controller.patient.fullName},",
-              subLabel: " your appointment with",
+              label: "${controller.patient.fullName}،",
+              subLabel: " تم إنشاء موعدك مع",
             ),
             VerticalSpacer(6),
             SuccessAppointmentTextRich(
               label: controller.doctor.name,
-              subLabel: "  had been created.",
+              subLabel: " بنجاح.",
             ),
             VerticalSpacer(17),
             Divider(color: AppColor.grey3),
@@ -60,7 +60,7 @@ class SuccessAppointmentScreen extends StatelessWidget {
         padding: EdgeInsets.all(24),
         child: ElevatedButton(
           onPressed: () => controller.onBooking(),
-          child: Text("See Appointment"),
+          child: Text("عرض الموعد"),
         ),
       ),
     );

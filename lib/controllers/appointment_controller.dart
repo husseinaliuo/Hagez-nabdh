@@ -1,8 +1,8 @@
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_route.dart';
-import 'package:medigo/data/dummy.dart';
-import 'package:medigo/data/model/filter_model.dart';
+import 'package:nabth/core/constant/app_route.dart';
+import 'package:nabth/data/dummy.dart';
+import 'package:nabth/data/model/filter_model.dart';
 
 import '../data/model/doctor_model.dart';
 import '../data/model/feel_model.dart';
@@ -75,8 +75,8 @@ class AppointmentController extends GetxController {
   void onBooking() {
     if (_selectedConsultationType == null) {
       Get.snackbar(
-        "Required",
-        "Please select a consultation type",
+        "مطلوب",
+        "يرجى اختيار نوع الاستشارة",
         snackPosition: SnackPosition.BOTTOM,
       );
       return;
@@ -84,8 +84,8 @@ class AppointmentController extends GetxController {
 
     if (_selectedTime == null) {
       Get.snackbar(
-        "Required",
-        "Please select a time",
+        "مطلوب",
+        "يرجى اختيار وقت",
         snackPosition: SnackPosition.BOTTOM,
       );
       return;
@@ -93,8 +93,8 @@ class AppointmentController extends GetxController {
 
     if (date == null) {
       Get.snackbar(
-        "Required",
-        "Please select a date",
+        "مطلوب",
+        "يرجى اختيار تاريخ",
         snackPosition: SnackPosition.BOTTOM,
       );
       return;

@@ -17,7 +17,7 @@ class PatientScreen extends StatelessWidget {
           SliverAppBar(
             leading: CustomBackButton(),
             title: Text(
-              "Patient’s details",
+              "بيانات المريض",
               style: TextStyle(
                 fontSize: 16,
                 color: AppColor.black,
@@ -35,7 +35,7 @@ class PatientScreen extends StatelessWidget {
               ? Center(child: CircularProgressIndicator())
               : ElevatedButton(
                   onPressed: () => controller.onBooking(),
-                  child: Text("Book Appointment"),
+                  child: Text("احجز موعداً"),
                 ),
         ),
       ),

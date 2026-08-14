@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_route.dart';
-import 'package:medigo/main.dart';
+import 'package:nabth/core/constant/app_route.dart';
+import 'package:nabth/main.dart';
 
 class RegisterController extends GetxController {
   final GlobalKey<FormState> _formRegisterKey = GlobalKey<FormState>();
@@ -56,32 +56,31 @@ class RegisterController extends GetxController {
       if (response != null) {
         debugPrint("Register successful: ${response.user}");
         Get.snackbar(
-          "Success",
-          "Registration successful! Please verify your account.",
+          "نجاح",
+          "تم إنشاء الحساب بنجاح! يرجى تفعيل حسابك.",
         );
         Get.offAllNamed(AppRoute.login);
       }
       setLoading(false);
     } catch (e) {
-      String errorMessage =
-          "An error occurred during register. Please try again.";
-      String errorTitle = "Register Error";
+      String errorMessage = "حدث خطأ أثناء التسجيل. يرجى المحاولة مرة أخرى.";
+      String errorTitle = "خطأ في التسجيل";
 
       // Check for network-related errors
       if (e.toString().contains('SocketException') ||
           e.toString().contains('Failed host lookup') ||
           e.toString().contains('No address associated with hostname')) {
-        errorTitle = "Network Error";
+        errorTitle = "خطأ في الشبكة";
         errorMessage =
-            "Unable to connect to the server. Please check your internet connection and try again.";
+            "تعذّر الاتصال بالخادم. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.";
       } else if (e.toString().contains('TimeoutException')) {
-        errorTitle = "Connection Timeout";
+        errorTitle = "انتهت مهلة الاتصال";
         errorMessage =
-            "The connection timed out. Please check your internet connection and try again.";
+            "انتهت مهلة الاتصال. يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.";
       } else if (e.toString().contains('already registered') ||
           e.toString().contains('already exists')) {
-        errorTitle = "Registration Failed";
-        errorMessage = "This email or phone number is already registered.";
+        errorTitle = "فشل التسجيل";
+        errorMessage = "هذا البريد الإلكتروني أو رقم الهاتف مسجل بالفعل.";
       }
 
       Get.showSnackbar(

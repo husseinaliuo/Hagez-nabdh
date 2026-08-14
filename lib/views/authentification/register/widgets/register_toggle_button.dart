@@ -22,7 +22,7 @@ class RegisterToggleButton extends StatelessWidget {
           children: [
             Expanded(
               child: AuthProviderButton(
-                label: "Phone",
+                label: "الهاتف",
                 icon: AppImage.imagesIconesCall,
                 isSelected: controller.isRegisterByPhone ? true : false,
                 onTap: () => controller.onToggleRegisterMethod(true),
@@ -31,7 +31,7 @@ class RegisterToggleButton extends StatelessWidget {
             HorizontalSpacer(11),
             Expanded(
               child: AuthProviderButton(
-                label: "E-mail",
+                label: "البريد الإلكتروني",
                 icon: AppImage.imagesIconesMessaging,
                 isSelected: controller.isRegisterByPhone ? false : true,
                 onTap: () => controller.onToggleRegisterMethod(false),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/config.dart';
-import 'package:medigo/core/constant/app_route.dart';
-import 'package:medigo/core/services/storage_service.dart';
-import 'package:medigo/main.dart';
+import 'package:nabth/core/config.dart';
+import 'package:nabth/core/constant/app_route.dart';
+import 'package:nabth/core/services/storage_service.dart';
+import 'package:nabth/main.dart';
 
 class LoginController extends GetxController {
   final GlobalKey<FormState> _formloginKey = GlobalKey<FormState>();
@@ -52,8 +52,8 @@ class LoginController extends GetxController {
     } catch (e) {
       Get.showSnackbar(
         GetSnackBar(
-          title: "Login Error",
-          message: "An error occurred during login. Please try again.",
+          title: "خطأ في تسجيل الدخول",
+          message: "حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.",
           duration: Duration(seconds: 3),
         ),
       );

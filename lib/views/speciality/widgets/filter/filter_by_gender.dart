@@ -12,7 +12,7 @@ class FilterByGender extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SpecialityController>(
       builder: (controller) => CustomExpansionTile(
-        title: "Gender",
+        title: "الجنس",
         initiallyExpanded: false,
         children: [
           Wrap(

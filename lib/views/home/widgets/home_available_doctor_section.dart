@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
-import 'package:medigo/controllers/home_controller.dart';
+import 'package:nabth/controllers/home_controller.dart';
 import '../../../core/config.dart';
 import 'home_available_doctor_card.dart';
 

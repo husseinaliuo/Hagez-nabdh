@@ -12,7 +12,7 @@ class FilterByExperienceLevel extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SpecialityController>(
       builder: (controller) => CustomExpansionTile(
-        title: "Experience Level",
+        title: "مستوى الخبرة",
         initiallyExpanded: false,
         children: [
           Wrap(

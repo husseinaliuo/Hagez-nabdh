@@ -14,7 +14,7 @@ class Config {
 
   // ==================== App Info ====================
 
-  static const String appName = "Medigo";
+  static const String appName = "نبض";
 
   // ==================== SharedPreferences Keys ====================
 

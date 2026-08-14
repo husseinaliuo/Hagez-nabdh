@@ -22,7 +22,7 @@ class SpecialitySearchAndSort extends GetView<SpecialityController> {
               style: TextStyle(fontSize: 14, color: AppColor.grey1),
               TextSpan(
                 text:
-                    "${controller.isLoading ? '0' : '${controller.doctors.length}'} Found for “",
+                    "${controller.isLoading ? '0' : '${controller.doctors.length}'} نتيجة لـ ",
                 children: [
                   TextSpan(
                     text: controller.speciality.title,
@@ -32,7 +32,6 @@ class SpecialitySearchAndSort extends GetView<SpecialityController> {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  TextSpan(text: "”"),
                 ],
               ),
             ),
@@ -52,7 +51,7 @@ class SpecialitySearchAndSort extends GetView<SpecialityController> {
               spacing: 10,
               children: [
                 Text(
-                  "Sort by",
+                  "الترتيب حسب",
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,

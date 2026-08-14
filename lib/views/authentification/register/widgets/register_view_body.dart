@@ -19,17 +19,17 @@ class RegisterViewBody extends GetView<RegisterController> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AuthLabel(label: "Full Name"),
+          AuthLabel(label: "الاسم الكامل"),
           VerticalSpacer(15),
           AuthInput(
-            hintText: "John Doe",
+            hintText: "الاسم الكامل",
             controller: controller.fullName,
             validator: (value) => validateInput(value, min: 3, max: 80),
           ),
           VerticalSpacer(30),
           RegisterProviderInput(),
           VerticalSpacer(30),
-          AuthLabel(label: "Password"),
+          AuthLabel(label: "كلمة المرور"),
           VerticalSpacer(15),
           GetBuilder<RegisterController>(
             builder: (controller) => AuthInput(
@@ -49,7 +49,7 @@ class RegisterViewBody extends GetView<RegisterController> {
             ),
           ),
           VerticalSpacer(30),
-          AuthLabel(label: "Confirm Password"),
+          AuthLabel(label: "تأكيد كلمة المرور"),
           VerticalSpacer(15),
           GetBuilder<RegisterController>(
             builder: (controller) => AuthInput(
@@ -76,7 +76,7 @@ class RegisterViewBody extends GetView<RegisterController> {
                     )
                   : ElevatedButton(
                       onPressed: () => controller.onSubmit(),
-                      child: Text("Register"),
+                      child: Text("إنشاء حساب"),
                     ),
             ),
           ),

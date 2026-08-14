@@ -17,7 +17,7 @@ class DoctorDetailWorkingCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            "Monday",
+            "الاثنين",
             style: TextStyle(
               fontSize: 14,
               fontWeight: FontWeight.w600,

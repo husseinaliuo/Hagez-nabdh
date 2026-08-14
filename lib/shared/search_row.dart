@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:medigo/core/config.dart';
+import 'package:nabth/core/config.dart';
 import '../core/constant/app_color.dart';
 import '../core/constant/app_image.dart';
 import '../views/authentification/widgets/auth_input.dart';
@@ -8,7 +8,7 @@ import '../views/authentification/widgets/auth_input.dart';
 class SearchRow extends StatelessWidget {
   const SearchRow({
     required this.controller,
-    this.title = "Find the right doctor for you",
+    this.title = "ابحث عن الطبيب المناسب لك",
     required this.onTap,
     super.key,
   });

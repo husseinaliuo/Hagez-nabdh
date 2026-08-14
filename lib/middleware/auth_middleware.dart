@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/config.dart';
-import 'package:medigo/core/constant/app_route.dart';
-import 'package:medigo/core/services/storage_service.dart';
+import 'package:nabth/core/config.dart';
+import 'package:nabth/core/constant/app_route.dart';
+import 'package:nabth/core/services/storage_service.dart';
 
 class AuthMiddleware extends GetMiddleware {
   @override

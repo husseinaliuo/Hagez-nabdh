@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/controllers/login_controller.dart';
+import 'package:nabth/controllers/login_controller.dart';
 import '../../../../core/constant/app_image.dart';
 import '../../widgets/auth_outline_button.dart';
 

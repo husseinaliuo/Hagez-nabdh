@@ -12,7 +12,7 @@ class FilterByAvailability extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SpecialityController>(
       builder: (controller) => CustomExpansionTile(
-        title: "Availability",
+        title: "التوفر",
         initiallyExpanded: false,
         children: [
           Wrap(

@@ -2,7 +2,7 @@ import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:medigo/controllers/appointment_controller.dart';
+import 'package:nabth/controllers/appointment_controller.dart';
 
 import '../../../core/constant/app_color.dart';
 import 'appointment_time_line_item.dart';
