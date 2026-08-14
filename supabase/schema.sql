@@ -1,6 +1,6 @@
 -- =====================================================
 -- نبض (Nabth) - Schema for Medical Appointment App
--- Run this SQL in your Supabase SQL Editor (Project: ydobpremnsiggeohwhae)
+-- Run this SQL in your Supabase SQL Editor (Project: cfumlqxpatcggaptowxi)
 -- =====================================================
 
 -- ---------- speciality table ----------
