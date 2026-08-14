@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medigo/core/config.dart';
+import 'package:nabth/core/config.dart';
 import 'doctor_detail_title.dart';
 import 'doctor_detail_working_card.dart';
 
@@ -14,7 +14,7 @@ class DoctorDetailWorkingHours extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 15,
         children: [
-          DoctorDetailTitle("Working Time"),
+          DoctorDetailTitle("أوقات العمل"),
           Column(
             spacing: 14,
             children: List.generate(4, (index) => DoctorDetailWorkingCard()),

@@ -17,7 +17,7 @@ class AppointmentConsultationTypeSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 20,
         children: [
-          DoctorDetailTitle("Consultation Type"),
+          DoctorDetailTitle("نوع الاستشارة"),
           GetBuilder<AppointmentController>(
             builder: (controller) => Wrap(
               spacing: 13,

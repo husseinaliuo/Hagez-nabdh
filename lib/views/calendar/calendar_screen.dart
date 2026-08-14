@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/config.dart';
-import 'package:medigo/shared/spacer.dart';
+import 'package:nabth/core/config.dart';
+import 'package:nabth/shared/spacer.dart';
 import '../../controllers/calendar_controller.dart';
 import 'widgets/calendar_status_section.dart';
 import 'widgets/calendar_view_body.dart';

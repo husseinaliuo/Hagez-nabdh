@@ -17,7 +17,7 @@ class AppointmentTimeSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 20,
         children: [
-          DoctorDetailTitle("Available Time"),
+          DoctorDetailTitle("الوقت المتاح"),
           GetBuilder<AppointmentController>(
             builder: (controller) {
               List<String> times =

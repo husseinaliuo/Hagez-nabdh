@@ -14,7 +14,7 @@ class HomeAppBarTitle extends StatelessWidget {
       children: [
         Text.rich(
           TextSpan(
-            text: "Hello ",
+            text: "أهلاً ",
             style: TextStyle(fontSize: 18, color: AppColor.black),
             children: [
               TextSpan(

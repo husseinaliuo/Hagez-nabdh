@@ -12,7 +12,7 @@ class FilterByDoctorRating extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<SpecialityController>(
       builder: (controller) => CustomExpansionTile(
-        title: "Doctor Rating",
+        title: "تقييم الطبيب",
         initiallyExpanded: false,
         children: [
           Wrap(

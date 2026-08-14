@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/config.dart';
-import 'package:medigo/core/constant/app_color.dart';
+import 'package:nabth/core/config.dart';
+import 'package:nabth/core/constant/app_color.dart';
 import '../../../controllers/doctor_detail_controller.dart';
 import 'doctor_detail_title.dart';
 
@@ -16,7 +16,7 @@ class DoctorDetailDescription extends GetView<DoctorDetailController> {
         crossAxisAlignment: CrossAxisAlignment.start,
         spacing: 15,
         children: [
-          DoctorDetailTitle("About"),
+          DoctorDetailTitle("عن الطبيب"),
           Text(
             controller.doctor.description,
             textAlign: TextAlign.justify,

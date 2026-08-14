@@ -2,12 +2,12 @@ String getGreetingMessage() {
   final hour = DateTime.now().hour;
 
   if (hour >= 5 && hour < 12) {
-    return "Good morning";
+    return "صباح الخير";
   } else if (hour >= 12 && hour < 17) {
-    return "Good afternoon";
+    return "مساء الخير";
   } else if (hour >= 17 && hour < 21) {
-    return "Good evening";
+    return "مساء الخير";
   } else {
-    return "Good night";
+    return "تصبح على خير";
   }
 }

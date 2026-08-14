@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_image.dart';
-import 'package:medigo/shared/spacer.dart';
+import 'package:nabth/core/constant/app_image.dart';
+import 'package:nabth/shared/spacer.dart';
 import '../../controllers/home_controller.dart';
 import 'widgets/home_appbar_title.dart';
 import 'widgets/home_available_doctor_section.dart';
@@ -44,20 +44,20 @@ class HomeScreen extends StatelessWidget {
           const SliverToBoxAdapter(child: HomeCoverSliding()),
           const SliverToBoxAdapter(child: VerticalSpacer(24)),
           SliverToBoxAdapter(
-            child: HomeSeeMoreButton(title: "Doctor Specialties", onTap: () {}),
+            child: HomeSeeMoreButton(title: "التخصصات الطبية", onTap: () {}),
           ),
           const SliverToBoxAdapter(child: VerticalSpacer(24)),
           const SliverToBoxAdapter(child: HomeSpecialitySection()),
 
           const SliverToBoxAdapter(child: VerticalSpacer(24)),
           SliverToBoxAdapter(
-            child: HomeSeeMoreButton(title: "Popular Doctors", onTap: () {}),
+            child: HomeSeeMoreButton(title: "الأطباء المميزون", onTap: () {}),
           ),
           const SliverToBoxAdapter(child: VerticalSpacer(24)),
           const SliverToBoxAdapter(child: HomePopularDoctorSection()),
           const SliverToBoxAdapter(child: VerticalSpacer(24)),
           SliverToBoxAdapter(
-            child: HomeSeeMoreButton(title: "Available Doctors", onTap: () {}),
+            child: HomeSeeMoreButton(title: "الأطباء المتاحون", onTap: () {}),
           ),
           const SliverToBoxAdapter(child: VerticalSpacer(24)),
           const SliverToBoxAdapter(child: HomeAvailableDoctorSection()),

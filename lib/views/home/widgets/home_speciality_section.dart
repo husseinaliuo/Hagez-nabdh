@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/controllers/home_controller.dart';
+import 'package:nabth/controllers/home_controller.dart';
 import '../../../core/config.dart';
 import 'home_speciality_item.dart';
 

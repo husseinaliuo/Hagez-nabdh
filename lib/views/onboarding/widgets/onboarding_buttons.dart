@@ -16,14 +16,14 @@ class OnboardingButtons extends StatelessWidget {
               ? SizedBox()
               : Expanded(
                   child: CustomOutlineButton(
-                    text: "Previous",
+                    text: "السابق",
                     onPressed: () => controller.previousPage(),
                   ),
                 ),
           Expanded(
             child: ElevatedButton(
               onPressed: () => controller.nextPage(),
-              child: Text(controller.isLastPage() ? "Get Started" : "Next"),
+              child: Text(controller.isLastPage() ? "ابدأ الآن" : "التالي"),
             ),
           ),
         ],

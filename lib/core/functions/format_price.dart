@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
 
 String formatPrice(num number) {
-  return NumberFormat("#,###", "fr_FR").format(number).replaceAll(",", " ");
+  return NumberFormat("#,###", "ar_SA").format(number).replaceAll(",", " ");
 }

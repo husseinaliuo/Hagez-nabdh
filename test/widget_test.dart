@@ -7,11 +7,11 @@
 
 import 'package:flutter_test/flutter_test.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/services/storage_service.dart';
-import 'package:medigo/main.dart';
+import 'package:nabth/core/services/storage_service.dart';
+import 'package:nabth/main.dart';
 
 void main() {
-  testWidgets('Medigo app smoke test', (WidgetTester tester) async {
+  testWidgets('Nabth app smoke test', (WidgetTester tester) async {
     // Initialize services for testing
     await Get.putAsync(() => StorageService().init());
 

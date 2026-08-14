@@ -24,7 +24,7 @@ class CalendarViewBody extends StatelessWidget {
                     color: Colors.grey,
                   ),
                   Text(
-                    "No appointments found.",
+                    "لا توجد مواعيد.",
                     style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ],

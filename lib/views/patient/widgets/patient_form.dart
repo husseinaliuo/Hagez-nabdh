@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/controllers/patient_controller.dart';
-import 'package:medigo/core/config.dart';
+import 'package:nabth/controllers/patient_controller.dart';
+import 'package:nabth/core/config.dart';
 
 import '../../../core/functions/valid_input.dart';
 import '../../../data/dummy.dart';
@@ -22,15 +22,15 @@ class PatientForm extends GetView<PatientController> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AuthLabel(label: "Full Name"),
+            AuthLabel(label: "الاسم الكامل"),
             VerticalSpacer(15),
             AuthInput(
-              hintText: "John Doe",
+              hintText: "الاسم الكامل",
               controller: controller.fullName,
               validator: (value) => validateInput(value, min: 3, max: 80),
             ),
             VerticalSpacer(30),
-            AuthLabel(label: "Email"),
+            AuthLabel(label: "البريد الإلكتروني"),
             VerticalSpacer(15),
             AuthInput(
               hintText: "user@mail.com",
@@ -40,7 +40,7 @@ class PatientForm extends GetView<PatientController> {
                   validateInput(value, min: 8, max: 200, type: InputType.email),
             ),
             VerticalSpacer(30),
-            AuthLabel(label: "Phone Number"),
+            AuthLabel(label: "رقم الهاتف"),
             VerticalSpacer(15),
             AuthInput(
               hintText: "+1234567890",
@@ -50,7 +50,7 @@ class PatientForm extends GetView<PatientController> {
                   validateInput(value, min: 8, max: 8, type: InputType.number),
             ),
             VerticalSpacer(30),
-            AuthLabel(label: "Gender"),
+            AuthLabel(label: "الجنس"),
             VerticalSpacer(15),
             GetBuilder<PatientController>(
               builder: (controller) => Row(
@@ -69,20 +69,20 @@ class PatientForm extends GetView<PatientController> {
             ),
             VerticalSpacer(30),
 
-            AuthLabel(label: "Age"),
+            AuthLabel(label: "العمر"),
             VerticalSpacer(15),
             AuthInput(
-              hintText: "Age in years",
+              hintText: "العمر بالسنوات",
               controller: controller.age,
               keyboardType: TextInputType.number,
               validator: (value) =>
                   validateInput(value, min: 1, max: 2, type: InputType.number),
             ),
             VerticalSpacer(30),
-            AuthLabel(label: "Detail"),
+            AuthLabel(label: "تفاصيل إضافية"),
             VerticalSpacer(15),
             AuthInput(
-              hintText: "Patient detail information here ...",
+              hintText: "أدخل تفاصيل المريض هنا ...",
               controller: controller.detail,
               maxLines: 5,
               validator: (value) =>

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/controllers/speciality_controller.dart';
+import 'package:nabth/controllers/speciality_controller.dart';
 
 import '../../../core/config.dart';
 import '../../../shared/popular_doctor_card.dart';
@@ -25,7 +25,7 @@ class SpecialityDoctorListView extends StatelessWidget {
                 children: [
                   Icon(Icons.search_off, size: 80, color: Colors.grey),
                   Text(
-                    "No doctors found with the applied filters.",
+                    "لا يوجد أطباء مطابقون للتصفية الحالية.",
                     style: TextStyle(fontSize: 16, color: Colors.grey),
                   ),
                 ],

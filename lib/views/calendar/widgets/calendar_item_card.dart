@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:medigo/data/model/appointment_model.dart';
+import 'package:nabth/data/model/appointment_model.dart';
 import '../../../core/constant/app_color.dart';
 import '../../../core/constant/app_image.dart';
 import 'calendar_detail_widget.dart';
@@ -76,18 +76,18 @@ class CalendarItemCard extends StatelessWidget {
             children: [
               Expanded(
                 child: CalendarDetailWidget(
-                  label: "Date",
+                  label: "التاريخ",
                   value: appointment.date != null
                       ? DateFormat(
                           "d MMM y",
                         ).format(DateTime.parse(appointment.date!))
-                      : "N/A",
+                      : "غير محدد",
                   icon: AppImage.imagesIconesCalendar,
                 ),
               ),
               Expanded(
                 child: CalendarDetailWidget(
-                  label: "Time",
+                  label: "الوقت",
                   value: "${appointment.time}",
                   icon: AppImage.imagesIconesClock,
                 ),
@@ -109,7 +109,7 @@ class CalendarItemCard extends StatelessWidget {
                           elevation: 0,
                         ),
                         child: Text(
-                          "Cancel Appointment",
+                          "إلغاء الموعد",
                           style: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w600,

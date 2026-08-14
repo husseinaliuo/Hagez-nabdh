@@ -19,14 +19,14 @@ class DoctorDetailStatSection extends GetView<DoctorDetailController> {
           Expanded(
             child: DoctorDetailStat(
               title: "${controller.doctor.patientNumber}",
-              value: "Patients",
+              value: "مريض",
               icon: AppImage.imagesIconesUsers,
             ),
           ),
           Expanded(
             child: DoctorDetailStat(
-              title: "${controller.doctor.experienceNumber} Yrs",
-              value: "Experience",
+              title: "${controller.doctor.experienceNumber} سنة",
+              value: "خبرة",
               icon: AppImage.imagesIconesBadge,
               color: AppColor.roseE8,
             ),
@@ -34,7 +34,7 @@ class DoctorDetailStatSection extends GetView<DoctorDetailController> {
           Expanded(
             child: DoctorDetailStat(
               title: "${controller.doctor.ratingNumber}",
-              value: "Ratings",
+              value: "تقييم",
               icon: AppImage.imagesIconesStarOutline,
               color: AppColor.yellowF7,
             ),

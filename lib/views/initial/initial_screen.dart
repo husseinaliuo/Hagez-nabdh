@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_color.dart';
-import 'package:medigo/data/dummy.dart';
+import 'package:nabth/core/constant/app_color.dart';
+import 'package:nabth/data/dummy.dart';
 import '../../controllers/initial_controller.dart';
 import 'widgets/initial_bottom_navigation.dart';
 

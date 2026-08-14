@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_color.dart';
-import 'package:medigo/core/constant/app_image.dart';
+import 'package:nabth/core/config.dart';
+import 'package:nabth/core/constant/app_color.dart';
+import 'package:nabth/core/constant/app_font_family.dart';
+import 'package:nabth/core/constant/app_image.dart';
 import '../controllers/splash_controller.dart';
 import '../shared/spacer.dart';
 
@@ -32,10 +34,14 @@ class SplashScreen extends StatelessWidget {
               height: 83,
             ),
             VerticalSpacer(14),
-            SvgPicture.asset(
-              AppImage.imagesLogoLogoText,
-              width: 120,
-              height: 20,
+            Text(
+              Config.appName,
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.w700,
+                fontFamily: AppFontFamily.tajawal,
+                color: AppColor.white,
+              ),
             ),
             Spacer(),
             SpinKitCircle(color: Colors.white, size: 50.0),

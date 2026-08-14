@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/shared/spacer.dart';
+import 'package:nabth/shared/spacer.dart';
 import '../../controllers/appointment_controller.dart';
 import '../../core/constant/app_color.dart';
 import '../../shared/buttons/custom_back_button.dart';
-import 'widgets/appointment_consultationTypeSection.dart';
+import 'widgets/appointment_consultation_type_section.dart';
 import 'widgets/appointment_fees_section.dart';
 import 'widgets/appointment_slots_section.dart';
 import 'widgets/appointment_time_line.dart';
@@ -22,7 +22,7 @@ class AppointmentScreen extends StatelessWidget {
           SliverAppBar(
             leading: CustomBackButton(),
             title: Text(
-              "New Appointment",
+              "موعد جديد",
               style: TextStyle(
                 fontSize: 16,
                 color: AppColor.black,
@@ -45,7 +45,7 @@ class AppointmentScreen extends StatelessWidget {
         padding: EdgeInsets.all(24),
         child: ElevatedButton(
           onPressed: () => controller.onBooking(),
-          child: Text("Book Appointment"),
+          child: Text("احجز موعداً"),
         ),
       ),
     );

@@ -1,9 +1,9 @@
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_route.dart';
-import 'package:medigo/data/model/doctor_model.dart';
-import 'package:medigo/data/model/speciality_model.dart';
-import 'package:medigo/main.dart';
+import 'package:nabth/core/constant/app_route.dart';
+import 'package:nabth/data/model/doctor_model.dart';
+import 'package:nabth/data/model/speciality_model.dart';
+import 'package:nabth/main.dart';
 
 class HomeController extends GetxController {
   final List<SpecialityModel> _specialities = [];

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/config.dart';
-import 'package:medigo/shared/spacer.dart';
+import 'package:nabth/core/config.dart';
+import 'package:nabth/shared/spacer.dart';
 import '../../../controllers/login_controller.dart';
 import '../widgets/auth_bottom_text_button.dart';
 import '../widgets/auth_description.dart';
@@ -25,11 +25,10 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 children: [
                   VerticalSpacer(41),
-                  AuthTitle(text: "Go ahead & set up your account"),
+                  AuthTitle(text: "تفضّل وأنشئ حسابك"),
                   VerticalSpacer(15),
                   AuthDescription(
-                    text:
-                        "Welcome back! Please sign in to manage your account.",
+                    text: "مرحباً بعودتك! سجّل الدخول لإدارة حسابك.",
                   ),
                   VerticalSpacer(48),
                   LoginViewBody(),
@@ -48,8 +47,8 @@ class LoginScreen extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               padding: EdgeInsets.only(bottom: 35),
               child: AuthBottomTextButton(
-                label: "Don't have an account? ",
-                subLabel: "Sign Up",
+                label: "ليس لديك حساب؟ ",
+                subLabel: "سجّل الآن",
                 onTap: () => controller.navigateToRegister(),
               ),
             ),

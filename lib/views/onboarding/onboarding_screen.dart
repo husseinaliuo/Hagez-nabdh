@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medigo/core/constant/app_color.dart';
+import 'package:nabth/core/constant/app_color.dart';
 import '../../controllers/onboarding_controller.dart';
 import '../../data/dummy.dart';
 import 'widgets/onboarding_body_bottom.dart';

@@ -9,21 +9,21 @@ import 'model/onboarding_model.dart';
 
 List<OnboardingModel> onboardingItems = [
   OnboardingModel(
-    title: "Your Health, Our Priority",
+    title: "صحتك أولويتنا",
     description:
-        "We look after the well-being of your entire family. Find the right doctor and book an appointment with complete peace of mind",
+        "نعتني بصحة عائلتك بالكامل. اعثر على الطبيب المناسب واحجز موعدك براحة تامة",
     image: AppImage.imagesOnboard1,
   ),
   OnboardingModel(
-    title: "Take Care of Your Loved Ones",
+    title: "اعتنِ بأحبائك",
     description:
-        "From pediatrics to general medicine and beyond, manage your whole family's health simply, quickly, and securely.",
+        "من طب الأطفال إلى الطب العام وما بعده، أدِر صحة عائلتك ببساطة وسرعة وأمان.",
     image: AppImage.imagesOnboard2,
   ),
   OnboardingModel(
-    title: "Your Family Health Partner",
+    title: "شريك صحة عائلتك",
     description:
-        "Because your family's health is precious, we put the best healthcare professionals within your reach.",
+        "لأن صحة عائلتك غالية، نضع أفضل الأطباء في متناول يدك.",
     image: AppImage.imagesOnboard3,
   ),
 ];
@@ -73,16 +73,16 @@ List<OnboardingModel> onboardingItems = [
 
 List<FilterModel> availabilityFilters = [
   FilterModel(
-    name: "Morning",
+    name: "صباحاً",
     value: "morning",
     image: AppImage.imagesIconesMorning,
   ),
   FilterModel(
-    name: "Afternoon",
+    name: "ظهراً",
     value: "afternoon",
     image: AppImage.imagesIconesAfternoon,
   ),
-  FilterModel(name: "Night", value: "night", image: AppImage.imagesIconesNight),
+  FilterModel(name: "مساءً", value: "night", image: AppImage.imagesIconesNight),
 ];
 
 List<String> morningTimeAvailabilityFilters = [
@@ -110,26 +110,26 @@ List<String> nightTimeAvailabilityFilters = [
 
 List<FilterModel> consultationTypeFilters = [
   FilterModel(
-    name: "Online",
+    name: "أونلاين",
     value: "online",
     image: AppImage.imagesIconesOnline,
   ),
   FilterModel(
-    name: "Home visit",
+    name: "زيارة منزلية",
     value: "home_visit",
     image: AppImage.imagesIconesHomeVisit,
   ),
   FilterModel(
-    name: "Hospital",
+    name: "المستشفى",
     value: "hospital",
     image: AppImage.imagesIconesHospital,
   ),
 ];
 
 List<FilterModel> genderFilters = [
-  FilterModel(name: "Male", value: "Male", image: AppImage.imagesIconesMale),
+  FilterModel(name: "ذكر", value: "Male", image: AppImage.imagesIconesMale),
   FilterModel(
-    name: "Female",
+    name: "أنثى",
     value: "Female",
     image: AppImage.imagesIconesFemale,
   ),
@@ -145,17 +145,17 @@ List<FilterModel> ratingFilters = [
 
 List<FilterModel> experienceFilters = [
   FilterModel(
-    name: "0–5 years",
+    name: "0-5 سنوات",
     value: "1-3",
     image: AppImage.imagesIconesExperience,
   ),
   FilterModel(
-    name: "5–10 years",
+    name: "5-10 سنوات",
     value: "4-6",
     image: AppImage.imagesIconesExperience,
   ),
   FilterModel(
-    name: "10+ years",
+    name: "+10 سنوات",
     value: "7+",
     image: AppImage.imagesIconesExperience,
   ),
@@ -185,28 +185,28 @@ List<BottomNavigationModel> bottomNavigationItems = [
 ];
 
 List<FilterModel> sortByFilters = [
-  FilterModel(name: "Full Name (A-Z)", value: "name_asc"),
-  FilterModel(name: "Experience (High → Low)", value: "experience_desc"),
-  FilterModel(name: "Rating (High → Low)", value: "rating_desc"),
-  FilterModel(name: "Fee (Low → High)", value: "fee_asc"),
-  FilterModel(name: "Availability", value: "availability"),
+  FilterModel(name: "الاسم (أ-ي)", value: "name_asc"),
+  FilterModel(name: "الخبرة (الأعلى أولاً)", value: "experience_desc"),
+  FilterModel(name: "التقييم (الأعلى أولاً)", value: "rating_desc"),
+  FilterModel(name: "الرسوم (الأقل أولاً)", value: "fee_asc"),
+  FilterModel(name: "التوفر", value: "availability"),
 ];
 
 List<FeelModel> fees = [
   FeelModel(
-    name: "Voice Call",
+    name: "مكالمة صوتية",
     price: 10,
     icon: AppImage.imagesIconesCall,
     value: "voice_call",
   ),
   FeelModel(
-    name: "Messaging",
+    name: "رسائل نصية",
     price: 5,
     icon: AppImage.imagesIconesMessaging,
     value: "messaging",
   ),
   FeelModel(
-    name: "Video Call",
+    name: "مكالمة فيديو",
     price: 20,
     icon: AppImage.imagesIconesVideoCall,
     value: "video_call",
@@ -214,7 +214,7 @@ List<FeelModel> fees = [
 ];
 
 List<FilterModel> statuses = [
-  FilterModel(name: "Pending", value: "pending"),
-  FilterModel(name: "Completed", value: "completed"),
-  FilterModel(name: "Cancelled", value: "cancelled"),
+  FilterModel(name: "قيد الانتظار", value: "pending"),
+  FilterModel(name: "مكتملة", value: "completed"),
+  FilterModel(name: "ملغاة", value: "cancelled"),
 ];

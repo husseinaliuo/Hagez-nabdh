@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart';
-import 'package:medigo/core/constant/app_color.dart';
-import 'package:medigo/data/dummy.dart';
+import 'package:nabth/core/constant/app_color.dart';
+import 'package:nabth/data/dummy.dart';
 import '../../../controllers/speciality_controller.dart';
 import 'speciality_modal_sheet_bottom_buttons.dart';
 import 'speciality_modal_sheet_title.dart';
@@ -17,7 +17,7 @@ class SpecialityModalBottomSheet extends GetView<SpecialityController> {
       height: MediaQuery.of(context).size.height * 0.5,
       child: Column(
         children: [
-          SpecialityModalSheetTitle(title: "Sort by"),
+          SpecialityModalSheetTitle(title: "الترتيب حسب"),
           Spacer(),
           GetBuilder<SpecialityController>(
             builder: (controller) => Column(
