@@ -1,97 +1,132 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:nabth/core/config.dart';
 import 'package:nabth/core/constant/app_route.dart';
-import 'package:nabth/core/services/storage_service.dart';
 import 'package:nabth/main.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class LoginController extends GetxController {
   final GlobalKey<FormState> _formloginKey = GlobalKey<FormState>();
-  bool _isObscured = true;
-  final TextEditingController _email = TextEditingController(
-    text: "mahdi@gmail.com",
-  );
-  final TextEditingController _password = TextEditingController(
-    text: "123456789",
-  );
+  final TextEditingController _phoneNumber = TextEditingController();
+  final TextEditingController _otpCode = TextEditingController();
+  bool _isOtpSent = false;
   bool _isLoading = false;
 
   // Getters
-  bool get isObscured => _isObscured;
-  TextEditingController get email => _email;
-  TextEditingController get password => _password;
+  bool get isOtpSent => _isOtpSent;
+  TextEditingController get phoneNumber => _phoneNumber;
+  TextEditingController get otpCode => _otpCode;
   GlobalKey<FormState> get formloginKey => _formloginKey;
   bool get isLoading => _isLoading;
 
+  String get _phoneWithCode {
+    var digits = _phoneNumber.text.replaceAll(RegExp(r'\D'), '');
+    if (digits.startsWith('964')) {
+      digits = digits.substring(3);
+    }
+    if (digits.startsWith('0')) {
+      digits = digits.substring(1);
+    }
+    return '+964$digits';
+  }
+
   void onSubmit() {
     if (_formloginKey.currentState!.validate()) {
-      onLogin();
-    } else {
-      debugPrint("Form is invalid. Please check the input fields.");
+      if (_isOtpSent) {
+        onVerifyOtp();
+      } else {
+        onSendOtp();
+      }
     }
   }
 
-  Future<void> onLogin() async {
+  Future<void> onSendOtp() async {
     try {
       setLoading(true);
-      final response = await supabase?.auth.signInWithPassword(
-        email: _email.text,
-        password: _password.text,
+      await supabase!.auth.signInWithOtp(phone: _phoneWithCode);
+      _isOtpSent = true;
+      setLoading(false);
+      Get.snackbar(
+        "تم إرسال الرمز",
+        "تم إرسال رمز التحقق إلى رقم هاتفك",
+        snackPosition: SnackPosition.BOTTOM,
       );
-      if (response != null) {
-        // print token
-        debugPrint("Login successful: ${response.user} \n ${response.session}");
-        debugPrint(response.session?.accessToken);
+    } catch (e) {
+      setLoading(false);
+      _showError(e, isSend: true);
+    }
+  }
+
+  Future<void> onVerifyOtp() async {
+    try {
+      setLoading(true);
+      final response = await supabase!.auth.verifyOTP(
+        phone: _phoneWithCode,
+        token: _otpCode.text.trim(),
+        type: OtpType.sms,
+      );
+      setLoading(false);
+      if (response.session != null) {
         Get.offAllNamed(AppRoute.initial);
-        StorageService.to.setString(
-          Config.sharedPrefTokenKey,
-          response.session!.accessToken,
+      } else {
+        Get.snackbar(
+          "خطأ",
+          "تعذّر التحقق من الرمز. حاول مرة أخرى.",
+          snackPosition: SnackPosition.BOTTOM,
         );
       }
-      setLoading(false);
     } catch (e) {
-      Get.showSnackbar(
-        GetSnackBar(
-          title: "خطأ في تسجيل الدخول",
-          message: "حدث خطأ أثناء تسجيل الدخول. يرجى المحاولة مرة أخرى.",
-          duration: Duration(seconds: 3),
-        ),
-      );
-      debugPrint("Login failed: $e");
       setLoading(false);
+      _showError(e);
     }
+  }
+
+  void _showError(dynamic e, {bool isSend = false}) {
+    String title = isSend ? "فشل إرسال الرمز" : "رمز غير صحيح";
+    String message = isSend
+        ? "تعذّر إرسال رمز التحقق. تحقق من رقم الهاتف وحاول مرة أخرى."
+        : "رمز التحقق غير صحيح أو انتهت صلاحيته.";
+
+    if (e.toString().contains('SocketException') ||
+        e.toString().contains('Failed host lookup') ||
+        e.toString().contains('No address associated with hostname')) {
+      title = "خطأ في الشبكة";
+      message = "تعذّر الاتصال بالخادم. تحقق من اتصالك بالإنترنت.";
+    } else if (e.toString().contains('TimeoutException')) {
+      title = "انتهت مهلة الاتصال";
+      message = "انتهت مهلة الاتصال. حاول مرة أخرى.";
+    } else if (e.toString().contains('Invalid OTP') ||
+        e.toString().contains('otp_expired') ||
+        e.toString().contains('invalid token')) {
+      title = "رمز غير صحيح";
+      message = "رمز التحقق غير صحيح أو انتهت صلاحيته.";
+    } else if (e.toString().contains('phone')) {
+      title = "رقم غير صحيح";
+      message = "يرجى التحقق من رقم الهاتف ثم إعادة المحاولة.";
+    }
+
+    Get.showSnackbar(
+      GetSnackBar(
+        title: title,
+        message: message,
+        duration: const Duration(seconds: 4),
+        backgroundColor: Colors.red.shade600,
+      ),
+    );
   }
 
   void navigateToRegister() {
-    Get.toNamed(AppRoute.register);
-  }
-
-  void loginWithGoogle() {
-    // TODO: Implement Google login functionality
-  }
-
-  void loginWithFacebook() {
-    // TODO: Implement Facebook login functionality
-  }
-
-  void forgotPassword() {
-    // TODO: Implement forgot password functionality
-  }
-
-  void togglePasswordVisibility() {
-    _isObscured = _isObscured ? false : true;
-    update();
-  }
-
-  @override
-  void onClose() {
-    _email.dispose();
-    _password.dispose();
-    super.onClose();
+    Get.offAllNamed(AppRoute.register);
   }
 
   void setLoading(bool value) {
     _isLoading = value;
     update();
+  }
+
+  @override
+  void onClose() {
+    _phoneNumber.dispose();
+    _otpCode.dispose();
+    super.onClose();
   }
 }

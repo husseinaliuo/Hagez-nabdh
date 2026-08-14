@@ -6,7 +6,6 @@ import '../../../shared/spacer.dart';
 import '../widgets/auth_bottom_text_button.dart';
 import '../widgets/auth_description.dart';
 import '../widgets/auth_title.dart';
-import 'widgets/register_toggle_button.dart';
 import 'widgets/register_view_body.dart';
 
 class RegisterScreen extends StatelessWidget {
@@ -27,11 +26,9 @@ class RegisterScreen extends StatelessWidget {
                   AuthTitle(text: "أنشئ حسابك"),
                   VerticalSpacer(15),
                   AuthDescription(
-                    text: "سجّل الآن لإدارة حسابك بسهولة.",
+                    text: "سجّل الآن برقم هاتفك لإدارة حسابك بسهولة.",
                   ),
                   VerticalSpacer(25),
-                  RegisterToggleButton(),
-                  VerticalSpacer(48),
                   RegisterViewBody(),
                 ],
               ),

@@ -6,8 +6,6 @@ import '../../../controllers/login_controller.dart';
 import '../widgets/auth_bottom_text_button.dart';
 import '../widgets/auth_description.dart';
 import '../widgets/auth_title.dart';
-import 'widgets/login_divider.dart';
-import 'widgets/login_social_media_auth.dart';
 import 'widgets/login_view_body.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -25,18 +23,13 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 children: [
                   VerticalSpacer(41),
-                  AuthTitle(text: "تفضّل وأنشئ حسابك"),
+                  AuthTitle(text: "تفضّل وسجّل دخولك"),
                   VerticalSpacer(15),
                   AuthDescription(
-                    text: "مرحباً بعودتك! سجّل الدخول لإدارة حسابك.",
+                    text: "مرحباً بعودتك! سجّل الدخول برقم هاتفك.",
                   ),
                   VerticalSpacer(48),
                   LoginViewBody(),
-                  VerticalSpacer(48),
-                  LoginDivider(),
-                  VerticalSpacer(48),
-                  LoginSocialMediaAuth(),
-                  VerticalSpacer(48),
                 ],
               ),
             ),
