@@ -2,11 +2,13 @@ import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:nabth/core/constant/app_route.dart';
 import 'package:nabth/data/model/doctor_model.dart';
 import 'package:nabth/data/model/patient_model.dart';
 import 'package:nabth/main.dart';
-import '../data/model/appointment_model.dart';
+import 'package:nabth/core/services/notification_service.dart';
+import 'package:nabth/data/model/appointment_model.dart';
 import '../data/model/feel_model.dart';
 import '../data/model/filter_model.dart';
 
@@ -119,6 +121,21 @@ class PatientController extends GetxController {
 
       log("appointment inserted: $response");
       setLoading(false);
+
+      await NotificationService.instance.requestPermission();
+      await NotificationService.instance.showBookingConfirmed(
+        doctorName: _doctor.name,
+        date: DateFormat('yyyy-MM-dd').format(_date!),
+        time: _selectedTime!,
+      );
+      await NotificationService.instance.scheduleReminder(
+        id: patientId,
+        doctorName: _doctor.name,
+        date: DateFormat('yyyy-MM-dd').format(_date!),
+        time: _selectedTime!,
+        appointmentDateTime: _date!,
+      );
+
       Get.offAllNamed(
         AppRoute.successAppointment,
         arguments: {

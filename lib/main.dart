@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
 import 'package:nabth/core/config.dart';
+import 'package:nabth/core/services/notification_service.dart';
 import 'package:nabth/core/services/storage_service.dart';
 import 'package:nabth/core/theme/app_theme.dart';
 import 'package:nabth/router/index.dart';
@@ -23,6 +24,7 @@ void main() async {
     anonKey: Config.supabaseAnonKey,
   );
   supabase = Supabase.instance.client;
+  await NotificationService.instance.init();
   runApp(const MyApp());
 }
 
